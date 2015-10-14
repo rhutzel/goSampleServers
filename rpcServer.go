@@ -20,6 +20,6 @@ func (c *Counter) StepIncrement(input *Obj, output *Obj) error {
 func main() {
 	server := rpc.NewServer()
 	server.RegisterName("GoCounter", new(Counter))
-	listener, _ := net.Listen("tcp", ":1234")
+	listener, _ := net.Listen("tcp", "127.0.0.1:1234")
 	server.Accept(listener)
 }
